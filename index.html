@@ -33,6 +33,48 @@
                     font-size: 0.9rem;
                 }
             }
+            /* Фильтрация */
+            .profile-card {
+                transition: all 0.3s ease; /* Было раньше для hover */
+                opacity: 1;
+                transform: scale(1);
+                height: auto;
+            }
+
+            #all:checked ~ .profiles-grid [data-category] {
+                opacity: 1;
+                transform: scale(1);
+                height: auto;
+                pointer-events: auto;
+            }
+
+            #product:checked ~ .profiles-grid [data-category]:not([data-category="product"]),
+            #engineering:checked ~ .profiles-grid [data-category]:not([data-category="engineering"]),
+            #design:checked ~ .profiles-grid [data-category]:not([data-category="design"]),
+            #data:checked ~ .profiles-grid [data-category]:not([data-category="data"]),
+            #growth:checked ~ .profiles-grid [data-category]:not([data-category="growth"]) {
+                opacity: 0;
+                transform: scale(0.8);
+                height: 0;
+                margin: 0;
+                padding: 0;
+                pointer-events: none;
+                position: absolute;
+            }
+
+            /* Стили для радио кнопок (оставляем как есть) */
+            .filter-button {
+                cursor: pointer;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                transition: all 0.2s ease;
+            }
+
+            input[type="radio"]:checked + .filter-button {
+                background: linear-gradient(to right, #FF385C, #E61E4D);
+                color: white;
+            }
+
         </style>
     
         <!-- Yandex.Metrika counter -->
@@ -94,12 +136,50 @@
         </div>
     </header>
 
+    <!-- Filter Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h2 class="text-xl font-semibold mb-4">Фильтр по специализации</h2>
+            <div class="flex flex-wrap gap-4">
+                <input type="radio" name="filter" id="all" class="hidden" checked>
+                <label for="all" class="filter-button border border-gray-200">
+                    Все
+                </label>
+
+                <input type="radio" name="filter" id="product" class="hidden">
+                <label for="product" class="filter-button border border-gray-200">
+                    Product Management
+                </label>
+
+                <input type="radio" name="filter" id="engineering" class="hidden">
+                <label for="engineering" class="filter-button border border-gray-200">
+                    Engineering
+                </label>
+
+                <input type="radio" name="filter" id="design" class="hidden">
+                <label for="design" class="filter-button border border-gray-200">
+                    Design
+                </label>
+
+                <input type="radio" name="filter" id="data" class="hidden">
+                <label for="data" class="filter-button border border-gray-200">
+                    Data Science
+                </label>
+
+                <input type="radio" name="filter" id="growth" class="hidden">
+                <label for="growth" class="filter-button border border-gray-200">
+                    Growth
+                </label>
+            </div>
+        </div>
+    </div>
+
     <!-- Profiles Grid -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="profiles-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
             
             <!-- Profile Card 1 -->
-            <div class="profile-card bg-white rounded-xl overflow-hidden">
+            <div class="profile-card bg-white rounded-xl overflow-hidden" data-category="product">
                 <img src="https://media.licdn.com/dms/image/v2/C4D03AQH3AmhRmm6aCA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516268434422?e=1745452800&v=beta&t=aZor631SdirrwqTYYDL9XslRZ9bf8LLjrfoQXl69qII" alt="Shreyas Doshi" class="w-full h-60 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Shreyas Doshi</h3>
@@ -112,7 +192,7 @@
             </div>
 
             <!-- Profile Card 2 -->
-            <div class="profile-card bg-white rounded-xl overflow-hidden">
+            <div class="profile-card bg-white rounded-xl overflow-hidden" data-category="product">
                 <img src="https://media.licdn.com/dms/image/v2/D5603AQEtN0NPUcDLrA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1668720550515?e=1745452800&v=beta&t=F5DFXzsMSpjPOOaKO1YDgYnEKPkx2BlhxwaIVhpojTg" alt="Lenny Rachitsky" class="w-full h-60 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Lenny Rachitsky</h3>
@@ -125,56 +205,18 @@
             </div>
 
             <!-- Profile Card 3 -->
-            <div class="profile-card bg-white rounded-xl overflow-hidden">
-                <img src="/api/placeholder/400/300" alt="Alex Johnson" class="w-full h-48 object-cover">
+            <div class="profile-card bg-white rounded-xl overflow-hidden" data-category="UX Designer">
+                <img src="https://media.licdn.com/dms/image/v2/D5603AQEtN0NPUcDLrA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1668720550515?e=1745452800&v=beta&t=F5DFXzsMSpjPOOaKO1YDgYnEKPkx2BlhxwaIVhpojTg" alt="Lenny Rachitsky" class="w-full h-60 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Alex Johnson</h3>
-                    <p class="text-gray-600 mb-4">UX Designer в Apple. Создает инновационные интерфейсы будущего. Победитель Red Dot Design Award 2023.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Lenny Rachitsky</h3>
+                    <p class="text-gray-600 mb-4">Ленни, экс-PM Airbnb, ведет один из самых популярных продуктовых новостных бюллетеней (Lenny’s Newsletter) и дублирует его контент на LinkedIn. Он пишет о продуктовой стратегии, росте и берет интервью у ведущих продакт-менеджеров.</p>
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">UX Design</span>
-                        <a href="https://linkedin.com/in/alexjohnson" target="_blank" class="text-red-500 hover:text-red-600 font-medium">LinkedIn →</a>
+                        <span class="text-sm text-gray-500">Product Management</span>
+                        <a href="https://www.linkedin.com/in/lennyrachitsky/" target="_blank" class="text-red-500 hover:text-red-600 font-medium">LinkedIn →</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Profile Card 4 -->
-            <div class="profile-card bg-white rounded-xl overflow-hidden">
-                <img src="/api/placeholder/400/300" alt="Maria Garcia" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Maria Garcia</h3>
-                    <p class="text-gray-600 mb-4">Data Scientist в Netflix. Эксперт по ML и AI. Автор курса "Data Science in Production".</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">Data Science</span>
-                        <a href="https://linkedin.com/in/mariagarcia" target="_blank" class="text-red-500 hover:text-red-600 font-medium">LinkedIn →</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Profile Card 5 -->
-            <div class="profile-card bg-white rounded-xl overflow-hidden">
-                <img src="/api/placeholder/400/300" alt="David Kim" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">David Kim</h3>
-                    <p class="text-gray-600 mb-4">Growth Manager в Spotify. Специалист по масштабированию продуктов. Ментор в Y Combinator.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">Growth</span>
-                        <a href="https://linkedin.com/in/davidkim" target="_blank" class="text-red-500 hover:text-red-600 font-medium">LinkedIn →</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Profile Card 6 -->
-            <div class="profile-card bg-white rounded-xl overflow-hidden">
-                <img src="/api/placeholder/400/300" alt="Sarah Brown" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Sarah Brown</h3>
-                    <p class="text-gray-600 mb-4">Engineering Manager в Microsoft. Лидер команды Azure. Спикер на Microsoft Build.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">Engineering Management</span>
-                        <a href="https://linkedin.com/in/sarahbrown" target="_blank" class="text-red-500 hover:text-red-600 font-medium">LinkedIn →</a>
-                    </div>
-                </div>
-            </div>
+ 
         </div>
     </main>
 
