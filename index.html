@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Список интересных профилей - мои подписки">
-    <title>Мои подписки - Интересные профили</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        .brand-gradient {
-            background: linear-gradient(to right, #FF385C, #E61E4D);
-        }
-        
-        .profile-card {
-            transition: all 0.3s ease;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .mobile-padding {
-                padding-left: 1rem;
-                padding-right: 1rem;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Как понять, что MVP готов?</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+        <style>
+            .airbnb-gradient {
+                background: linear-gradient(to right, #FF385C, #E61E4D);
             }
-            
-            .mobile-text {
-                font-size: 0.9rem;
+    
+            .lifehacks-color {
+                background: #F8E5EA;
             }
-        }
-    </style>
-</head>
+    
+            .card-hover:hover {
+                transform: translateY(-2px);
+                transition: all 0.2s ease-in-out;
+            }
+    
+            .brand-gradient {
+                background: linear-gradient(to right, #FF385C, #E61E4D);
+            }
+    
+            @media (max-width: 768px) {
+                .mobile-padding {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
+                
+                .mobile-text {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();
+           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+           ym(99896448, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/99896448" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    </head>
 <body class="bg-gray-50">
      <!-- Top Navigation with SVG Logo -->
      <nav class="bg-white shadow-sm sticky top-0 z-50">
