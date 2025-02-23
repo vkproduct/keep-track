@@ -21,7 +21,7 @@
 
         /* Прячем все карточки при активном фильтре */
         #product:checked ~ .profiles-grid [data-category],
-        #engineering:checked ~ .profiles-grid [data-category],
+        #product_marketing:checked ~ .profiles-grid [data-category],
         #design:checked ~ .profiles-grid [data-category],
         #data:checked ~ .profiles-grid [data-category],
         #growth:checked ~ .profiles-grid [data-category] {
@@ -31,7 +31,7 @@
         /* Показываем только нужные карточки */
         #all:checked ~ .profiles-grid [data-category],
         #product:checked ~ .profiles-grid [data-category="product"],
-        #engineering:checked ~ .profiles-grid [data-category="engineering"],
+        #product_marketing:checked ~ .profiles-grid [data-category="product_marketing"],
         #design:checked ~ .profiles-grid [data-category="design"],
         #data:checked ~ .profiles-grid [data-category="data"],
         #growth:checked ~ .profiles-grid [data-category="growth"] {
@@ -67,7 +67,7 @@
         /* Отдельные селекторы для каждой кнопки */
         #all:checked ~ .bg-white .filter-button[for="all"],
         #product:checked ~ .bg-white .filter-button[for="product"],
-        #engineering:checked ~ .bg-white .filter-button[for="engineering"],
+        #product_marketing:checked ~ .bg-white .filter-button[for="product_marketing"],
         #design:checked ~ .bg-white .filter-button[for="design"],
         #data:checked ~ .bg-white .filter-button[for="data"],
         #growth:checked ~ .bg-white .filter-button[for="growth"] {
@@ -138,7 +138,7 @@
         <!-- Radio buttons -->
         <input type="radio" name="filter" id="all" class="hidden" checked>
         <input type="radio" name="filter" id="product" class="hidden">
-        <input type="radio" name="filter" id="engineering" class="hidden">
+        <input type="radio" name="filter" id="product_marketing" class="hidden">
         <input type="radio" name="filter" id="design" class="hidden">
         <input type="radio" name="filter" id="data" class="hidden">
         <input type="radio" name="filter" id="growth" class="hidden">
@@ -158,24 +158,14 @@
                     Product Management
                 </label>
 
-                <input type="radio" name="filter" id="engineering" class="hidden">
-                <label for="engineering" class="filter-button">
-                    Engineering
+                <input type="radio" name="filter" id="product_marketing" class="hidden">
+                <label for="product_marketing" class="filter-button">
+                    Product Marketing
                 </label>
 
                 <input type="radio" name="filter" id="design" class="hidden">
                 <label for="design" class="filter-button">
                     Product Design
-                </label>
-
-                <input type="radio" name="filter" id="data" class="hidden">
-                <label for="data" class="filter-button">
-                    Data Science
-                </label>
-
-                <input type="radio" name="filter" id="growth" class="hidden">
-                <label for="growth" class="filter-button">
-                    Growth
                 </label>
             </div>
         </div>
@@ -289,30 +279,30 @@
 
             <!-- Profile Card 8 -->
             <div class="profile-card bg-white rounded-xl overflow-hidden flex flex-col" data-category="design">
-                <img src="https://media.licdn.com/dms/image/v2/D5603AQHwPvuwURG1Zw/profile-displayphoto-shrink_400_400/B56ZS9SWGrGsAg-/0/1738342490879?e=1745452800&v=beta&t=3ZzTeI1E1QQm_jy-KuJSrDJc7ouLyCEyG39sJs-m9j8" alt="Julie Zhuo" class="w-full h-60 object-cover">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQERhCQ-1S-_CQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708082764606?e=1745452800&v=beta&t=65CQ0iKYy78eLn69k23vvEMXi0peYPCSjJBKxa7O_MI" alt="Mike Atherton" class="w-full h-60 object-cover">
                 <div class="p-6 flex flex-col flex-1">
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Julie Zhuo</h3>
-                        <p class="text-gray-600">Джули, бывший VP Product Design в Facebook, публикует глубокие размышления о лидерстве и создании продуктов. В ее постах сочетаются личные истории и уроки по управлению продуктом.</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Mike Atherton</h3>
+                        <p class="text-gray-600">Эксперт по дизайн-системам, который помогает создавать масштабируемые продуктовые дизайны. Он отлично объясняет, как строить согласованные и эффективные дизайн-фреймворки.</p>
                     </div>
                     <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-100">
                         <span class="text-sm text-gray-500">Product Design</span>
-                        <a href="https://www.linkedin.com/in/julie-zhuo/" target="_blank" class="text-red-500 hover:text-red-600 font-medium">LinkedIn →</a>
+                        <a href="https://www.linkedin.com/in/reduxd/" target="_blank" class="text-red-500 hover:text-red-600 font-medium">LinkedIn →</a>
                     </div>
                 </div>
             </div>
 
             <!-- Profile Card 9 -->
             <div class="profile-card bg-white rounded-xl overflow-hidden flex flex-col" data-category="design">
-                <img src="https://media.licdn.com/dms/image/v2/D5603AQHwPvuwURG1Zw/profile-displayphoto-shrink_400_400/B56ZS9SWGrGsAg-/0/1738342490879?e=1745452800&v=beta&t=3ZzTeI1E1QQm_jy-KuJSrDJc7ouLyCEyG39sJs-m9j8" alt="Julie Zhuo" class="w-full h-60 object-cover">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQEqm-jNhTZlDw/profile-displayphoto-shrink_400_400/B4DZRkefxBHkAg-/0/1736852508153?e=1745452800&v=beta&t=qw96am-ObyEMTd-WWKBAYxuFce8qYpTmlfUnzfdKqXM" alt="Ioana Teleanu" class="w-full h-60 object-cover">
                 <div class="p-6 flex flex-col flex-1">
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Julie Zhuo</h3>
-                        <p class="text-gray-600">Джули, бывший VP Product Design в Facebook, публикует глубокие размышления о лидерстве и создании продуктов. В ее постах сочетаются личные истории и уроки по управлению продуктом.</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Ioana Teleanu</h3>
+                        <p class="text-gray-600">Иоана, ex-Senior Product Designer в Miro. Делится краткими UX/UI уроками на LinkedIn. Отличный эксперт по UX.</p>
                     </div>
                     <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-100">
                         <span class="text-sm text-gray-500">Product Design</span>
-                        <a href="https://www.linkedin.com/in/julie-zhuo/" target="_blank" class="text-red-500 hover:text-red-600 font-medium">LinkedIn →</a>
+                        <a href="https://www.linkedin.com/in/ioanateleanu/" target="_blank" class="text-red-500 hover:text-red-600 font-medium">LinkedIn →</a>
                     </div>
                 </div>
             </div>
